@@ -1,41 +1,38 @@
 {
-	"schemaVersion": 1,
-	"id": "repo",
-	"version": "${version}",
-	"name": "repo",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/repo/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.lvvfll.repo.Repo"
-		],
-		"client": [
-			"com.lvvfll.repo.RepoClient"
-		]
-	},
-	"mixins": [
-		"repo.mixins.json",
-		{
-			"config": "repo.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.17.2",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "repo", // 你的 Mod ID
+  "version": "${version}",
+  "name": "Repo",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/repo/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.repo.Repo" // 根据你的截图和默认模板，这是你的主 Mod 类路径
+    ],
+    "client": [
+      "com.example.repo.RepoClient" // 如果有客户端入口，则在此处
+    ]
+  },
+  "mixins": [
+    "repo.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22", // 你的 Fabric Loader 版本
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "geckolib": ">=4.2.4" // 添加这行，与 build.gradle 中的版本保持一致 (或使用 `>=` 允许更新)
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }
